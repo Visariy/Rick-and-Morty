@@ -22,9 +22,14 @@
     "eslint-plugin-prettier": "^5.0.0",
     "nuxt": "^3.6.5",
     "prettier": "^3.0.0",
+    "sass": "^1.64.2",
     "typescript": "^5.1.6"
   },
   "dependencies": {
-    "@pinia/nuxt": "^0.4.11"
+    "@nuxtjs/axios": "^5.13.6",
+    "@pinia-plugin-persistedstate/nuxt": "^1.1.1",
+    "@pinia/nuxt": "^0.4.11",
+    "axios": "^1.4.0",
+    "pinia": "^2.1.6"
   }
 }

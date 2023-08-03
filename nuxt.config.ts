@@ -1,8 +1,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  runtimeConfig: {
-    public: {
-      apiBase: "https://rickandmortyapi.com/api",
-    },
+  modules: ["@pinia/nuxt", "@pinia-plugin-persistedstate/nuxt"],
+  build: {
+    transpile: ["~/interfaces", "~/services"],
   },
 });

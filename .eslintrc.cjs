@@ -1,6 +1,7 @@
 module.exports = {
   root: true,
   env: {
+    "vue/setup-compiler-macros": true,
     browser: true,
     node: true,
   },
@@ -10,5 +11,5 @@ module.exports = {
   },
   extends: ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
   plugins: [],
-  rules: {},
+  rules: { "prettier/prettier": "warn" },
 };
