@@ -1,5 +1,5 @@
 <template>
-  <div v-if="!characterStore.isLoading" class="character-item-container">
+  <div class="character-item-container">
     <CharacterCard
       v-for="character of characterStore.characterList"
       :key="character.id"
@@ -15,19 +15,19 @@ import { useCharacterStore } from "~/stores/character";
 
 const characterStore = useCharacterStore();
 
-const observerElement = ref<HTMLDivElement | null>(null)
+const observerElement = ref<HTMLDivElement | null>(null);
 
 onMounted(() => {
   const option = {
-    rootMargin: '0px',
-    threeshold: 1.0
-  }
+    rootMargin: "0px",
+    threeshold: 1.0,
+  };
 
   const callback = (entries: IntersectionObserverEntry[]) => {
-    if(entries[0].isIntersecting && characterStore.dataList) {
+    if (entries[0].isIntersecting && characterStore.dataList) {
       characterStore.loadNextPage(characterStore.dataList.next);
     }
-  }
+  };
 
   const observer = new IntersectionObserver(callback, option);
   observer.observe(observerElement.value as HTMLDivElement);
@@ -46,6 +46,6 @@ onMounted(() => {
   grid-template-columns: repeat(2, 1fr);
 }
 .observer {
-    height: 30px;
+  height: 30px;
 }
 </style>

@@ -2,7 +2,9 @@
   <div class="character-container">
     <input v-model="characterStore.searchData.name" />
     <select v-model="characterStore.searchData.status">
-      <option v-for="option in options" :key="option.id" :value="option.value">{{ option.text }}</option>
+      <option v-for="option in options" :key="option.id" :value="option.value">
+        {{ option.text }}
+      </option>
     </select>
     <CharactersList />
   </div>

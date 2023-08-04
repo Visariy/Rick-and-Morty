@@ -11,8 +11,8 @@
         {{ character.species }}
       </div>
       <div class="episodes">
-        <ul v-for="episode of episodeList" :key="episode">
-          <li>{{ episode }}</li>
+        <ul class="episodes-list" v-for="episode of episodeList" :key="episode.id">
+          <li class="episodes-list__item" @click="router.push(`/episode/${episode.id}`)">{{ episode.name }}</li>
         </ul>
       </div>
     </div>
@@ -22,22 +22,25 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { ICharacter } from "~/interfaces/ICharacter";
+import { IEpisode } from "~/interfaces/IEpisode";
 import { useEpisodeStore } from "~/stores/episode";
+import { useRouter } from "#vue-router"
 
 const props = defineProps<{ character: ICharacter }>();
 
-const episodeList = ref<string[]>([]);
+const episodeList = ref<IEpisode[]>([]);
 
 const episodeStore = useEpisodeStore();
+
+const router = useRouter();
 
 onMounted(async () => {
   for (let i = 0; i < props.character.episode.length; i++) {
     const episodeUrl = props.character.episode[i];
     await episodeStore.getEpisode(episodeUrl);
-    console.log(episodeStore.episodeInfo);
     if (episodeList.value.length <= 5) {
       if (episodeStore.episodeInfo) {
-        episodeList.value.push(episodeStore.episodeInfo.name);
+        episodeList.value.push(episodeStore.episodeInfo);
       }
     }
   }
@@ -52,6 +55,15 @@ onMounted(async () => {
     .image {
       width: 200px;
       border-radius: 10px;
+    }
+  }
+  .character-info {
+    .episodes {
+      .episodes-list {
+        .episodes-list__item {
+          cursor: pointer;
+        }
+      }
     }
   }
 }

@@ -11,7 +11,6 @@ const characterStore = useCharacterStore();
 onMounted(async () => {
   await characterStore.getCharacterByQueryCondition(characterStore.searchData);
 });
-
 </script>
 
 <style lang="scss">
