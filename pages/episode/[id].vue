@@ -6,6 +6,7 @@
 </template>
 
 <script setup lang="ts">
+import { useRoute } from "vue-router"
 import { useEpisodeStore } from "~/stores/episode";
 import { IEpisode } from "~/interfaces/IEpisode";
 
