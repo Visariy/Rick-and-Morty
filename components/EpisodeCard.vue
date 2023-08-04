@@ -9,19 +9,15 @@
       </h4>
     </div>
     <div class="characters">
-        <div
+      <div
         v-for="character in episodeCharacters"
         :key="character.id"
         class="image-container"
-        >
+      >
         <NuxtLink :to="`/character/${character.id}`">
-            <img
-                class="image"
-                :src="character.image"
-                alt="img"
-            />
+          <img class="image" :src="character.image" alt="img" />
         </NuxtLink>
-        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -51,52 +47,51 @@ onMounted(async () => {
 .episode-card-container {
   border: 1px solid grey;
   border-radius: 10px;
-    .description {
-        align-items: center;
-        flex-direction: column;
-        display: flex;
-        gap: 50px;
-        padding-bottom: 50px;
-        padding-top: 50px;
-        &__title {
-          text-align: center;
-          font-family: 'Source Code Pro', monospace;
-        }
-        &__date {
-          font-family: 'Source Code Pro', monospace;
-        }
+  .description {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    gap: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    &__title {
+      text-align: center;
+      font-family: "Source Code Pro", monospace;
     }
-    .characters {
-      justify-items: center;
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-        .image-container {
-            .image {
-            width: 150px;
-        }
-        }
+    &__date {
+      font-family: "Source Code Pro", monospace;
     }
+  }
+  .characters {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    .image-container {
+      .image {
+        width: 150px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 900px) {
   .characters {
-    grid-template-columns: repeat(5,1fr) !important; 
+    grid-template-columns: repeat(5, 1fr) !important;
   }
 }
 @media screen and (max-width: 750px) {
   .characters {
-    grid-template-columns: repeat(4,1fr) !important; 
+    grid-template-columns: repeat(4, 1fr) !important;
   }
 }
 @media screen and (max-width: 600px) {
   .characters {
-    grid-template-columns: repeat(3,1fr) !important; 
+    grid-template-columns: repeat(3, 1fr) !important;
   }
 }
 @media screen and (max-width: 470px) {
   .characters {
-    grid-template-columns: repeat(2,1fr) !important; 
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
-
 </style>

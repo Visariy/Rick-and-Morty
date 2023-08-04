@@ -1,9 +1,13 @@
 <template>
   <div class="character-container">
     <div class="character-container__filters">
-      <input class="input" v-model="characterStore.searchData.name" />
-      <select class="select" v-model="characterStore.searchData.status">
-        <option v-for="option in options" :key="option.id" :value="option.value">
+      <input v-model="characterStore.searchData.name" class="input" />
+      <select v-model="characterStore.searchData.status" class="select">
+        <option
+          v-for="option in options"
+          :key="option.id"
+          :value="option.value"
+        >
           {{ option.text }}
         </option>
       </select>
@@ -30,23 +34,23 @@ const characterStore = useCharacterStore();
 .character-container {
   margin: 0 auto;
   max-width: 1200px;
-  &__filters{
+  &__filters {
     padding-top: 15%;
     display: flex;
     justify-content: center;
-    .input{
+    .input {
       border-radius: 5px;
       border: 1px solid black;
       margin-right: 10px;
       padding: 10px;
       width: 50%;
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Source Code Pro", monospace;
     }
     .select {
       appearance: none;
       border-radius: 5px;
       padding: 10px;
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Source Code Pro", monospace;
     }
   }
   &__list {

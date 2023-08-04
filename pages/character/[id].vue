@@ -26,10 +26,10 @@ onMounted(async () => {
 </script>
 
 <style lang="scss">
-    .profile-container {
-        padding-top: 10%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+.profile-container {
+  padding-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 </style>

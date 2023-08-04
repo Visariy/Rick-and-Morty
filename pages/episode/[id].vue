@@ -28,10 +28,9 @@ const route = useRoute();
 
 <style lang="scss">
 .episode-container {
-    padding-bottom: 10%;
-    padding-top: 10%;
-    margin: 0 auto;
-    max-width: 1000px;
+  padding-bottom: 10%;
+  padding-top: 10%;
+  margin: 0 auto;
+  max-width: 1000px;
 }
-
 </style>

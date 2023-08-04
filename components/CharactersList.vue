@@ -6,7 +6,9 @@
       :character="character"
     />
   </div>
-  <div v-if="characterStore.characterList.length === 0" class="message">Nothing found</div>
+  <div v-if="characterStore.characterList.length === 0" class="message">
+    Nothing found
+  </div>
   <div ref="observerElement" class="observer"></div>
 </template>
 
@@ -31,12 +33,6 @@ onMounted(() => {
 
   const observer = new IntersectionObserver(callback, option);
   observer.observe(observerElement.value as HTMLDivElement);
-
-  if (characterStore.characterList.length > 0) {
-    for (const i of characterStore.characterList) {
-      console.log(i);
-    }
-  }
 });
 </script>
 
@@ -56,7 +52,7 @@ onMounted(() => {
   justify-content: center;
   font-size: 50px;
   color: black;
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
 }
 .observer {
   height: 30px;
