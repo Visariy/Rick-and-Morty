@@ -12,13 +12,15 @@ export class ApiService {
   public static getCharacterByQueryCondition = async (
     searchData: ISearchData,
   ): Promise<AxiosResponse<ICharacterResponse>> => {
-    if(searchData.name !== undefined && searchData.status !== undefined) {
-      return await api.get(
-        `/character/?name=${searchData.name}&status=${searchData.status}`,
-      );
-    } else {
-      return await api.get('/character')
-    }
+    
+    const params: any = {}
+
+    if (searchData.name) params.status = searchData.name;
+	  if (searchData.status) params.status = searchData.status;
+
+	  return await axios.get(`https://rickandmortyapi.com/api/character`, {
+		  params: params,
+	  });
   };
 
   public static getCharacterByUrl = async (

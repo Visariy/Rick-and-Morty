@@ -25,7 +25,7 @@ const options = ref([
   { id: 1, text: "Alive", value: "Alive" },
   { id: 2, text: "Dead", value: "Dead" },
   { id: 3, text: "Unknown", value: "Unknown" },
-  { id: 4, text: "Default", value: "" },
+  { id: 4, text: "Default", value: "" || undefined },
 ]);
 const characterStore = useCharacterStore();
 </script>
