@@ -1,7 +1,5 @@
 <template>
-  <NuxtPageTransition name="fade" mode="out-in">
     <RouterView></RouterView>
-  </NuxtPageTransition>
 </template>
 
 <script setup lang="ts">
@@ -17,12 +15,4 @@ onMounted(async () => {
 
 <style lang="scss">
 @use "~/assets/scss/main.scss";
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
 </style>

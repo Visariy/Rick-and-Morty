@@ -36,15 +36,16 @@ const characterStore = useCharacterStore();
     justify-content: center;
     .input{
       border-radius: 5px;
-      border: none;
-      color:red;
+      border: 1px solid black;
       margin-right: 10px;
       padding: 10px;
       width: 50%;
+      font-family: 'Source Code Pro', monospace;
     }
     .select {
       border-radius: 5px;
       padding: 10px;
+      font-family: 'Source Code Pro', monospace;
     }
   }
   &__list {

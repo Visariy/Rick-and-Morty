@@ -6,7 +6,7 @@
       :character="character"
     />
   </div>
-  <div v-if="characterStore.characterList.length === 0" class="message">Ничего не найдено</div>
+  <div v-if="characterStore.characterList.length === 0" class="message">Nothing found</div>
   <div ref="observerElement" class="observer"></div>
 </template>
 
@@ -45,11 +45,18 @@ onMounted(() => {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
+@media screen and (max-width: 1024px) {
+  .character-item-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 .message {
   display: flex;
   justify-content: center;
   font-size: 50px;
-  color: white;
+  color: black;
+  font-family: 'Source Code Pro', monospace;
 }
 .observer {
   height: 30px;

@@ -27,7 +27,7 @@ onMounted(async () => {
 
 <style lang="scss">
     .profile-container {
-        height: 100vh;
+        padding-top: 10%;
         display: flex;
         justify-content: center;
         align-items: center;

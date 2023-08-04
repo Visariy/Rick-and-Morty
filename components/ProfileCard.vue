@@ -5,13 +5,13 @@
     </div>
     <div class="description">
       <div class="name">
-       Имя: {{ character.name }}
+       Name: {{ character.name }}
       </div>
       <div class="species">
-       Вид: {{ character.species }}
+       Specie: {{ character.species }}
       </div>
       <div class="location">
-        Локация: {{ character.location.name }}
+        Location: {{ character.location.name }}
       </div>
     </div>
   </div>
@@ -26,32 +26,33 @@ defineProps<{ character: ICharacter }>();
 <style lang="scss">
 .profile-card-container {
     background: white;
+    border: 1px solid black;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    border-radius: 20px;
   .description {
     display: flex;
+    max-width: 250px;
     flex-direction: column;
     justify-content: space-around;
     padding-left: 20px;
     .name {
-        
+        font-size: 20px;
+        font-family: 'Source Code Pro', monospace;
     }
     .species {
+        font-size: 20px;
+        font-family: 'Source Code Pro', monospace;
     }
     .location {
+        font-size: 20px;
+        font-family: 'Source Code Pro', monospace;
     }
   }
 
   .image-container {
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    .image {
-      width: 250px;
-      border-radius: 50px;
-    }
   }
 }
 </style>
