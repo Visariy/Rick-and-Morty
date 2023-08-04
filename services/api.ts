@@ -15,7 +15,7 @@ export class ApiService {
     
     const params: any = {}
 
-    if (searchData.name) params.status = searchData.name;
+    if (searchData.name) params.name = searchData.name;
 	  if (searchData.status) params.status = searchData.status;
 
 	  return await axios.get(`https://rickandmortyapi.com/api/character`, {
