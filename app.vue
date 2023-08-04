@@ -1,9 +1,8 @@
 <template>
-    <RouterView></RouterView>
+  <RouterView></RouterView>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { useCharacterStore } from "~/stores/character";
 
 const characterStore = useCharacterStore();

@@ -10,8 +10,8 @@ export const useCharacterStore = defineStore(
   "characterStore",
   () => {
     const searchData = reactive<ISearchData>({
-      name: undefined,
-      status: undefined,
+      name: "",
+      status: "",
     });
     const characterList = ref<ICharacter[]>([]);
     const dataList = ref<IDataInfo>();

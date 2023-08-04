@@ -31,5 +31,8 @@
     "@pinia/nuxt": "^0.4.11",
     "axios": "^1.4.0",
     "pinia": "^2.1.6"
+  },
+  "overrides": {
+    "vue": "latest"
   }
 }

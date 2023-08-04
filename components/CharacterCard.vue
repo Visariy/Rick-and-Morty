@@ -4,7 +4,10 @@
       <img class="image" :src="character.image" alt="img" />
     </div>
     <div class="character-info">
-      <NuxtLink style="text-decoration: none; color: black" :to="`/character/${character.id}`" >
+      <NuxtLink
+        style="text-decoration: none; color: black"
+        :to="`/character/${character.id}`"
+      >
         <div class="name">
           {{ character.name }}
         </div>
@@ -26,13 +29,14 @@
           :key="episode.id"
           class="episodes-list"
         >
-        <NuxtLink style="text-decoration: none; color: black" :to="`/episode/${episode.id}`">
-          <li
-            class="episodes-list__item"
+          <NuxtLink
+            style="text-decoration: none; color: black"
+            :to="`/episode/${episode.id}`"
           >
-            {{ episode.name }}
-          </li>
-        </NuxtLink>
+            <li class="episodes-list__item">
+              {{ episode.name }}
+            </li>
+          </NuxtLink>
         </ul>
       </div>
     </div>
@@ -40,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from "vue";
 import { ICharacter } from "~/interfaces/ICharacter";
 import { IEpisode } from "~/interfaces/IEpisode";
 import { useEpisodeStore } from "~/stores/episode";
@@ -110,31 +113,31 @@ onMounted(async () => {
         background: red;
       }
       &__text {
-        font-family: 'Source Code Pro', monospace;
+        font-family: "Source Code Pro", monospace;
       }
     }
     .name {
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Source Code Pro", monospace;
       cursor: pointer;
       font-size: 20px;
       &:hover {
-        color:blue;
+        color: blue;
       }
     }
     .species {
-      font-family: 'Source Code Pro', monospace;
+      font-family: "Source Code Pro", monospace;
       font-size: 20px;
     }
     .episodes {
       &__title {
-        font-family: 'Source Code Pro', monospace;
+        font-family: "Source Code Pro", monospace;
       }
       .episodes-list {
         padding: 0;
         margin: 0;
         list-style-type: none;
         .episodes-list__item {
-          font-family: 'Source Code Pro', monospace;
+          font-family: "Source Code Pro", monospace;
           margin: 0;
           font-size: 15px;
           padding-left: 10px;
@@ -150,7 +153,7 @@ onMounted(async () => {
 }
 
 @media screen and (max-width: 562px) {
-  .character-component-container{
+  .character-component-container {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);

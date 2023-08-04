@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import { onMounted, ref } from "vue";
 import { useCharacterStore } from "~/stores/character";
 import { ICharacter } from "~/interfaces/ICharacter";
 
