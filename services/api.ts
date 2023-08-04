@@ -12,9 +12,13 @@ export class ApiService {
   public static getCharacterByQueryCondition = async (
     searchData: ISearchData,
   ): Promise<AxiosResponse<ICharacterResponse>> => {
-    return await api.get(
-      `/character/?name=${searchData.name}&status=${searchData.status}`,
-    );
+    if(searchData.name !== undefined && searchData.status !== undefined) {
+      return await api.get(
+        `/character/?name=${searchData.name}&status=${searchData.status}`,
+      );
+    } else {
+      return await api.get('/character')
+    }
   };
 
   public static getCharacterByUrl = async (
