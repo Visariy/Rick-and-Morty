@@ -1,12 +1,16 @@
 <template>
   <div class="character-container">
-    <input v-model="characterStore.searchData.name" />
-    <select v-model="characterStore.searchData.status">
-      <option v-for="option in options" :key="option.id" :value="option.value">
-        {{ option.text }}
-      </option>
-    </select>
-    <CharactersList />
+    <div class="character-container__filters">
+      <input class="input" v-model="characterStore.searchData.name" />
+      <select class="select" v-model="characterStore.searchData.status">
+        <option v-for="option in options" :key="option.id" :value="option.value">
+          {{ option.text }}
+        </option>
+      </select>
+    </div>
+    <div class="character-container__list">
+      <CharactersList />
+    </div>
   </div>
 </template>
 
@@ -22,4 +26,29 @@ const options = ref([
 const characterStore = useCharacterStore();
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.character-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  &__filters{
+    padding-top: 15%;
+    display: flex;
+    justify-content: center;
+    .input{
+      border-radius: 5px;
+      border: none;
+      color:red;
+      margin-right: 10px;
+      padding: 10px;
+      width: 50%;
+    }
+    .select {
+      border-radius: 5px;
+      padding: 10px;
+    }
+  }
+  &__list {
+    padding-top: 10%;
+  }
+}
+</style>
