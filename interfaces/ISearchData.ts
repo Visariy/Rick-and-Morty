@@ -1,4 +1,4 @@
 export interface ISearchData {
-  name: string;
-  status: string;
+  name: string | undefined;
+  status: string | undefined;
 }

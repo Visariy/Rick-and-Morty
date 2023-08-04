@@ -43,6 +43,7 @@ const characterStore = useCharacterStore();
       font-family: 'Source Code Pro', monospace;
     }
     .select {
+      appearance: none;
       border-radius: 5px;
       padding: 10px;
       font-family: 'Source Code Pro', monospace;

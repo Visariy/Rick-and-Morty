@@ -154,6 +154,11 @@ onMounted(async () => {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    .image-container {
+      .image {
+        padding-right: 0;
+      }
+    }
     .character-info {
       align-items: center;
     }

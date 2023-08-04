@@ -27,12 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
 import { ICharacter } from "interfaces/ICharacter";
 import { IEpisode } from "~/interfaces/IEpisode";
 import { useCharacterStore } from "~/stores/character";
-
-const router = useRouter();
 
 const episodeCharacters = ref<ICharacter[]>([]);
 
@@ -62,6 +59,7 @@ onMounted(async () => {
         padding-bottom: 50px;
         padding-top: 50px;
         &__title {
+          text-align: center;
           font-family: 'Source Code Pro', monospace;
         }
         &__date {
@@ -78,6 +76,27 @@ onMounted(async () => {
         }
         }
     }
+}
+
+@media screen and (max-width: 900px) {
+  .characters {
+    grid-template-columns: repeat(5,1fr) !important; 
+  }
+}
+@media screen and (max-width: 750px) {
+  .characters {
+    grid-template-columns: repeat(4,1fr) !important; 
+  }
+}
+@media screen and (max-width: 600px) {
+  .characters {
+    grid-template-columns: repeat(3,1fr) !important; 
+  }
+}
+@media screen and (max-width: 470px) {
+  .characters {
+    grid-template-columns: repeat(2,1fr) !important; 
+  }
 }
 
 </style>

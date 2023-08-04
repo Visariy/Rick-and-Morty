@@ -8,8 +8,8 @@ import { ApiService } from "~/services/api";
 
 export const useCharacterStore = defineStore("characterStore", () => {
   const searchData = reactive<ISearchData>({
-    name: "",
-    status: "",
+    name: undefined,
+    status: undefined,
   });
   const characterList = ref<ICharacter[]>([]);
   const dataList = ref<IDataInfo>();
@@ -68,4 +68,4 @@ export const useCharacterStore = defineStore("characterStore", () => {
     searchData,
     loadNextPage,
   };
-});
+}, {persist: { paths: ['searchData'] }});
