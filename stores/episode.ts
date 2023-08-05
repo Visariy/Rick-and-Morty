@@ -4,14 +4,14 @@ import { IEpisode } from "~/interfaces/IEpisode";
 
 export const useEpisodeStore = defineStore("episodeStore", () => {
   const episodeInfo = ref<IEpisode>();
-  const isLoading = ref(false);  
+  const isLoading = ref(false);
 
   const getEpisodeByUrl = async (url: string) => {
     try {
-      isLoading.value = true  
+      isLoading.value = true;
       const response = await ApiService.getEpisodeByUrl(url);
       episodeInfo.value = response.data;
-      isLoading.value = false
+      isLoading.value = false;
     } catch (e) {
       console.log(e);
     }
@@ -19,13 +19,13 @@ export const useEpisodeStore = defineStore("episodeStore", () => {
 
   const getEpisodeById = async (id: string) => {
     try {
-        isLoading.value = true  
-        return await ApiService.getEpisodeById(id)
-        isLoading.value = false
+      isLoading.value = true;
+      return await ApiService.getEpisodeById(id);
+      isLoading.value = false;
     } catch (e) {
-        console.log(e)
+      console.log(e);
     }
-  }
+  };
 
   return { getEpisodeByUrl, getEpisodeById, episodeInfo, isLoading };
 });
