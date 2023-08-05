@@ -69,7 +69,7 @@ const statusIndicator = (status: string): string => {
 onMounted(async () => {
   for (let i = 0; i < props.character.episode.length; i++) {
     const episodeUrl = props.character.episode[i];
-    await episodeStore.getEpisode(episodeUrl);
+    await episodeStore.getEpisodeByUrl(episodeUrl);
     if (episodeList.value.length <= 5) {
       if (episodeStore.episodeInfo) {
         episodeList.value.push(episodeStore.episodeInfo);

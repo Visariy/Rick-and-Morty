@@ -6,10 +6,10 @@ export const useEpisodeStore = defineStore("episodeStore", () => {
   const episodeInfo = ref<IEpisode>();
   const isLoading = ref(false);  
 
-  const getEpisode = async (url: string) => {
+  const getEpisodeByUrl = async (url: string) => {
     try {
       isLoading.value = true  
-      const response = await ApiService.getEpisode(url);
+      const response = await ApiService.getEpisodeByUrl(url);
       episodeInfo.value = response.data;
       isLoading.value = false
     } catch (e) {
@@ -27,5 +27,5 @@ export const useEpisodeStore = defineStore("episodeStore", () => {
     }
   }
 
-  return { getEpisode, getEpisodeById, episodeInfo, isLoading };
+  return { getEpisodeByUrl, getEpisodeById, episodeInfo, isLoading };
 });

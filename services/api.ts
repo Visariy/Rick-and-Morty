@@ -15,10 +15,14 @@ export class ApiService {
     
     const params: any = {}
 
-    if (searchData.name) params.name = searchData.name;
-	  if (searchData.status) params.status = searchData.status;
+    if (searchData.name) {
+      params.name = searchData.name;
+    } 
+	  if (searchData.status) {
+      params.status = searchData.status;
+    } 
 
-	  return await axios.get(`https://rickandmortyapi.com/api/character`, {
+	  return await api.get(`/character`, {
 		  params: params,
 	  });
   };
@@ -39,7 +43,7 @@ export class ApiService {
     );
   };
 
-  public static getEpisode = async (
+  public static getEpisodeByUrl = async (
     url: string,
   ): Promise<AxiosResponse<IEpisode>> => {
     return await api.get(`${url}`);

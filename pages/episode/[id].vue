@@ -2,7 +2,6 @@
   <div v-if="episodeInfo" class="episode-container">
     <EpisodeCard :episode-info="episodeInfo" />
   </div>
-  <div v-else>Идет загрузка</div>
 </template>
 
 <script setup lang="ts">
